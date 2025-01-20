@@ -25,6 +25,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.khccqboard.R
 import com.example.khccqboard.data.CurrentQ
 import com.example.khccqboard.data.FileURL
+import com.example.khccqboard.data.TimeResponse
 
 import com.example.khccqboard.databinding.DetailsFragmentBinding
 import com.example.khccqboard.util.PreferenceManager
@@ -68,11 +69,14 @@ class DetailsFragment : Fragment() {
     private val timeRefreshHandler = Handler()
     private val timeRefreshInterval = 60000L // 1 minute (60,000 milliseconds)
 
-    // New runnable for refreshing the current time API
+    private val scrollMsgsHandler = Handler()
+    private val scrollMsgsRefreshInterval = 600000L // 10 minutes
+
+
     private val timeRefreshRunnable = object : Runnable {
         override fun run() {
             callCurrentTimeApi() // Call the current time API every 1 minute
-            timeRefreshHandler.postDelayed(this, timeRefreshInterval) // Schedule next execution
+            timeRefreshHandler.postDelayed(this, timeRefreshInterval)
         }
     }
 
@@ -86,12 +90,7 @@ class DetailsFragment : Fragment() {
         }
     }
 
-
-    private val scrollMsgsHandler = Handler()
-    private val scrollMsgsRefreshInterval = 600000L // 10 minutes
-
-
-    private val scrollMsgsRunnable = object : Runnable {
+   private val scrollMsgsRunnable = object : Runnable {
         override fun run() {
             callGetScrollMsgsApi() // Call the API every 10 minutes
             scrollMsgsHandler.postDelayed(
@@ -184,6 +183,8 @@ class DetailsFragment : Fragment() {
         }
 
 
+
+
         binding.tvTime.setOnClickListener {
             PreferenceManager.clearUrl(requireContext())
             PreferenceManager.setURl(requireContext(), false)
@@ -196,7 +197,13 @@ class DetailsFragment : Fragment() {
     }
 
     private fun observerCallCurrentQApi() {
-        currentQViewModel.getCurrentQResponse.observe((viewLifecycleOwner)) { currentQList ->
+        currentQViewModel.getCurrentQResponse.observe((viewLifecycleOwner)) {currentQList->
+//            val currentQList = listOf(
+//                CurrentQ(TicketNo = "123", CounterId = 1),
+//                CurrentQ(TicketNo = "124", CounterId = 2),
+//                CurrentQ(TicketNo = "125", CounterId = 3)
+//            )
+
             currentQAdapter(currentQList)
 
         }
@@ -216,8 +223,8 @@ class DetailsFragment : Fragment() {
     fun currentQAdapter(currentQList: List<CurrentQ?>) {
 
         currentQAdapter = TicketAdapter(currentQList)
-//        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-//        binding.recyclerView.adapter = currentQAdapter
+        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerView.adapter = currentQAdapter
 
     }
 
@@ -748,7 +755,11 @@ class DetailsFragment : Fragment() {
     private fun observerCurrentTimeViewModel() {
 
         getCurrentTimeViewModel.timeResponse.observe(viewLifecycleOwner) { timeResponse ->
-            binding.tvTime.text = timeResponse.msgEn
+            val (date, time) = timeResponse.msgEn!!.split(" ")
+
+            binding.tvTime.text = time
+            binding.tvDate.text = date
+
         }
 
 
@@ -777,7 +788,7 @@ class DetailsFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         // Remove any pending callbacks to avoid memory leaks
-        //    timehandler.removeCallbacksAndMessages(null)
+        //timehandler.removeCallbacksAndMessages(null)
         scrollMsgsHandler.removeCallbacksAndMessages(null)
 
     }

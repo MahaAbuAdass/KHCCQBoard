@@ -49,6 +49,9 @@ class HomeFragment : Fragment() {
         val storedCode = PreferenceManager.getBranchCode(requireContext())
         binding.etBranchCode.setText(storedCode)
 
+        val displayNumber = PreferenceManager.getDisplayNumber(requireContext())
+        binding.etDisplayId.setText(displayNumber)
+
 
         view.setOnTouchListener { _, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {

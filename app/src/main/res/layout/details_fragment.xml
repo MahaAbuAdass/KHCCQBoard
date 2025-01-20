@@ -41,35 +41,34 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        android:textSize="25sp"
-                        android:textColor="@color/blue"
                         android:text="10:10:10"
-                        />
+                        android:fontFamily="@font/avenirheavy"
+                        android:textColor="@color/blue"
+                        android:textSize="25sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
+                        android:fontFamily="@font/avenirheavy"
                         android:id="@+id/tv_date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        app:layout_constraintTop_toBottomOf="@id/tv_time"
-                        app:layout_constraintStart_toStartOf="parent"
-                        android:textSize="20sp"
-                        android:textColor="@color/light_blue"
                         android:text="10/10/2024"
-                        />
+                        android:textColor="@color/light_blue"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_time" />
 
                     <ImageView
                         android:id="@+id/logo"
-                        android:layout_marginEnd="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginEnd="10dp"
                         android:src="@drawable/logo"
-/>
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -96,6 +95,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:text="رقم التذكرة"
+                        android:fontFamily="@font/gedinartwomedium1e"
                         android:textColor="@color/blue"
                         android:textSize="18sp"
                         app:layout_constraintEnd_toEndOf="@id/ticket_no_en"
@@ -108,6 +108,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="40dp"
                         android:text="Ticket No."
+                        android:fontFamily="@font/avenirheavy"
                         android:textColor="@color/blue"
                         android:textSize="18sp"
                         android:textStyle="bold"
@@ -120,6 +121,7 @@
                         android:layout_height="wrap_content"
                         android:text="شباك / غرفة"
                         android:textColor="@color/blue"
+                        android:fontFamily="@font/gedinartwomedium1e"
                         android:textSize="18sp"
                         app:layout_constraintEnd_toEndOf="@id/counter_no_en"
                         app:layout_constraintStart_toStartOf="@id/counter_no_en"
@@ -132,6 +134,8 @@
                         android:text=" Counter / Room"
                         android:textColor="@color/blue"
                         android:textSize="18sp"
+                        android:fontFamily="@font/avenirheavy"
+
                         android:textStyle="bold"
                         app:layout_constraintEnd_toStartOf="@id/door_no_en"
                         app:layout_constraintStart_toEndOf="@id/ticket_no_en"
@@ -144,6 +148,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:text="باب"
+                        android:fontFamily="@font/gedinartwomedium1e"
                         android:textColor="@color/blue"
                         android:textSize="18sp"
                         app:layout_constraintEnd_toEndOf="@id/door_no_en"
@@ -155,10 +160,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="40dp"
+                        android:fontFamily="@font/avenirheavy"
                         android:text="Door"
-                        android:textStyle="bold"
                         android:textColor="@color/blue"
                         android:textSize="18sp"
+                        android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/door_no_ar" />
 
@@ -182,39 +188,138 @@
                 android:layout_height="match_parent"
                 android:layout_weight="40">
 
-                <TextView
-                    android:layout_margin="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Ticket Number"
-                    android:textSize="24sp"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:textColor="@color/white"
+                <VideoView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/video"
+                    android:visibility="gone"
                     />
 
+
                 <TextView
-                    android:layout_margin="10dp"
+                    android:id="@+id/title_ticket"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="رقم التذكرة"
-                    android:textSize="24sp"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_margin="10dp"
+                    android:text="Ticket Number"
+                    android:fontFamily="@font/avenirheavy"
                     android:textColor="@color/white"
-                    />
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/gedinartwomedium1e"
+                    android:text="رقم التذكرة"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.material.card.MaterialCardView
->
+                    android:id="@+id/current_ticket_card_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    app:cardBackgroundColor="@color/blue"
+                    app:cardCornerRadius="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/title_ticket"
+                    app:strokeColor="@color/blue">
 
+                    <TextView
+                        android:id="@+id/current_ticket_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="30dp"
+                        android:textColor="@color/white"
+                        android:textSize="102sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/avenirheavy"
+                        tools:text="A1999" />
 
                 </com.google.android.material.card.MaterialCardView>
 
 
+                <TextView
+                    android:id="@+id/counter_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="80dp"
+                    android:text="Counter / Room"
+                    android:fontFamily="@font/avenirheavy"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toTopOf="@id/current_counter_card_view"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="شباك / غرفة"
+                    android:fontFamily="@font/gedinartwomedium1e"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/counter_title" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/current_counter_card_view"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="5dp"
+                    app:cardBackgroundColor="@color/blue"
+                    app:cardCornerRadius="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:strokeColor="@color/blue">
+
+                    <TextView
+                        android:id="@+id/current_counter_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginBottom="40dp"
+                        android:textColor="@color/white"
+                        android:textSize="102sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/avenirheavy"
+                        tools:text="A1999" />
+
+                </com.google.android.material.card.MaterialCardView>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_weight="56"
+                >
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
 
 
         </LinearLayout>
@@ -222,14 +327,14 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/last_card"
-            android:layout_weight="11.85"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="11.85"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="8dp"
-            android:layout_marginBottom="5dp"
-            android:layout_gravity="center"
             app:strokeColor="@color/white">
 
             <LinearLayout
@@ -250,6 +355,8 @@
                     android:ellipsize="marquee"
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
+                    android:fontFamily="@font/avenirheavy"
+
                     android:singleLine="true"
                     android:textColor="@color/black"
                     android:textSize="18sp"
@@ -268,6 +375,7 @@
                     android:singleLine="true"
                     android:textColor="@color/black"
                     android:textSize="18sp"
+                    android:fontFamily="@font/gedinartwomedium1e"
                     app:layout_constraintBottom_toTopOf="@id/marquee_layout"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
