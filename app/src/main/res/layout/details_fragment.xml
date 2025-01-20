@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:weightSum="90">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="11.85"
+            android:orientation="horizontal"
+            android:weightSum="96"
+            tools:ignore="Suspicious0dp">
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="40"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="8dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:textSize="25sp"
+                        android:textColor="@color/blue"
+                        android:text="10:10:10"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_time"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:textSize="20sp"
+                        android:textColor="@color/light_blue"
+                        android:text="10/10/2024"
+                        />
+
+                    <ImageView
+                        android:id="@+id/logo"
+                        android:layout_marginEnd="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:src="@drawable/logo"
+/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/titles_card"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="56"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="8dp"
+                app:strokeColor="@color/white">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/ticket_no_ar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="رقم التذكرة"
+                        android:textColor="@color/blue"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="@id/ticket_no_en"
+                        app:layout_constraintStart_toStartOf="@id/ticket_no_en"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/ticket_no_en"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:text="Ticket No."
+                        android:textColor="@color/blue"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ticket_no_ar" />
+
+                    <TextView
+                        android:id="@+id/counter_no_ar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="شباك / غرفة"
+                        android:textColor="@color/blue"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="@id/counter_no_en"
+                        app:layout_constraintStart_toStartOf="@id/counter_no_en"
+                        app:layout_constraintTop_toTopOf="@id/ticket_no_ar" />
+
+                    <TextView
+                        android:id="@+id/counter_no_en"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" Counter / Room"
+                        android:textColor="@color/blue"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/door_no_en"
+                        app:layout_constraintStart_toEndOf="@id/ticket_no_en"
+                        app:layout_constraintTop_toBottomOf="@id/counter_no_ar" />
+
+                    <TextView
+                        android:id="@+id/door_no_ar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:text="باب"
+                        android:textColor="@color/blue"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="@id/door_no_en"
+                        app:layout_constraintTop_toTopOf="@id/ticket_no_ar" />
+
+                    <TextView
+                        android:id="@+id/door_no_en"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="40dp"
+                        android:text="Door"
+                        android:textStyle="bold"
+                        android:textColor="@color/blue"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/door_no_ar" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="67.22"
+            android:weightSum="96"
+            tools:ignore="Suspicious0dp">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="40">
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ticket Number"
+                    android:textSize="24sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textColor="@color/white"
+                    />
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="رقم التذكرة"
+                    android:textSize="24sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textColor="@color/white"
+                    />
+
+                <com.google.android.material.card.MaterialCardView
+>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+        </LinearLayout>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/last_card"
+            android:layout_weight="11.85"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="8dp"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center"
+            app:strokeColor="@color/white">
+
+            <LinearLayout
+                android:id="@+id/marquee_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="vertical"
+
+                >
+
+                <TextView
+                    android:id="@+id/englishText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:ellipsize="marquee"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    tools:text="This is a long example of English text that is designed to scroll continuously from left to right" />
+
+
+                <TextView
+                    android:id="@+id/arabicText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:ellipsize="marquee"
+                    android:padding="1dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toTopOf="@id/marquee_layout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="هذا مثال طويل لنص باللغة العربية مصمم للتمرير بشكل مستمر من اليمين إلى اليسار." />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:weightSum="3"
+    android:layout_marginBottom="3dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_2_num"
+        app:strokeColor="@color/white"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:cardBackgroundColor="@color/grey"
+        app:cardCornerRadius="8dp"
+       >
+
+            <TextView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/cell_status"
+                android:padding="8dp"
+                tools:text="ticket #"
+                android:textColor="@color/white"
+                android:textSize="36sp"
+                android:textStyle="bold"
+
+                />
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="5dp"
+        android:layout_weight="1"
+        app:cardBackgroundColor="@color/grey"
+        app:cardCornerRadius="8dp"
+        app:strokeColor="@color/white"
+        >
+
+        <TextView
+            android:id="@+id/cell_ticket_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="8dp"
+            tools:text="ticket #"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="5dp"
+        android:layout_weight="1"
+        app:cardBackgroundColor="@color/grey"
+        app:cardCornerRadius="8dp"
+        app:strokeColor="@color/white"
+        >
+
+        <TextView
+            android:id="@+id/cell_door_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="8dp"
+            tools:text="ticket #"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            />
+    </com.google.android.material.card.MaterialCardView>
+
+
+</LinearLayout>
+
+
+
+
