@@ -3,6 +3,7 @@ package com.example.khccqboard.network
 
 import com.example.khccqboard.data.CurrentQ
 import com.example.khccqboard.data.CurrentTicket
+import com.example.khccqboard.data.ImagesResponse
 import com.example.khccqboard.data.ScrollMessages
 import com.example.khccqboard.data.TimeResponse
 import retrofit2.http.Body
@@ -27,15 +28,16 @@ interface ApiService {
 
     @GET("api/AndriodGetCurrentCalled")
     suspend fun getCurrentTicket(
-        @Query("branchcode") branchcode: String
-      //  @Query("QBoardNo") QBoardNo: String
+        @Query("branchcode") branchcode: String ,
+        @Query("DisplayNo") DisplayNo: String
 
     ) : CurrentTicket
-//
-//    @GET("api/AndriodGetImages")
-//    suspend fun getImages(
-//        @Query("BaseURL") baseURL: String
-//    ) : ImagesResponse
+
+    @GET("api/AndriodGetImages")
+    suspend fun getImages(
+        @Query("BaseURL") baseURL: String,
+        @Query("BranchCode") BranchCode: String
+    ) : ImagesResponse
 
 
     @GET("api/Get_Current_Time")

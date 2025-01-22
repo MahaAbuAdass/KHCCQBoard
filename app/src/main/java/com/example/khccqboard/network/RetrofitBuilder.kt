@@ -28,9 +28,9 @@ class RetrofitBuilder(context: Context) {
 //
     suspend fun getCurrentQ(branchcode:String)=apiService.getCurrentQ(branchcode)
 
-    suspend fun getCurrentTicket(branchcode:String ) = apiService.getCurrentTicket(branchcode )
+    suspend fun getCurrentTicket(branchcode:String , DisplayNo:String ) = apiService.getCurrentTicket(branchcode,DisplayNo )
 //
-//    suspend fun getImages(baseUrl : String)=apiService.getImages(baseUrl)
+    suspend fun getImages(baseUrl : String ,branchcode:String)=apiService.getImages(baseUrl,branchcode)
 
     suspend fun getCurrentTime()=apiService.getCurrentTime()
 

@@ -35,17 +35,14 @@ class TicketAdapter(
             val item = currentQList[position]
             holder.counterNumber.text = item?.CounterId.toString()
             holder.ticketNumber.text = item?.TicketNo ?: " "
-           // holder.doorNumber.text = item?.
+            holder.doorNumber.text = item?.CounterDoorNo
         } else {
             // If no data, set empty values or keep them as placeholders
 
             holder.ticketNumber.text = " \n -" // Keeps the layout even if empty
 
-            holder.ticketNumber.textSize = 19f // Set text size in SP (e.g., 20f for 20sp)
+            holder.ticketNumber.textSize = 15f // Set text size in SP (e.g., 20f for 20sp)
 
-
-            holder.ticketNumber.text = " \n -" // Keeps the layout even if empty
-            holder.ticketNumber.textSize = 19f // Keeps the layout even if empty
 
         }
     }
