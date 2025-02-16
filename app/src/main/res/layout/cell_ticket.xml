@@ -14,7 +14,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        app:cardBackgroundColor="@color/grey"
+        app:cardBackgroundColor="@color/dark_grey"
         app:cardCornerRadius="8dp"
        >
 
@@ -43,7 +43,7 @@
         android:layout_height="match_parent"
         android:layout_marginStart="5dp"
         android:layout_weight="1"
-        app:cardBackgroundColor="@color/grey"
+        app:cardBackgroundColor="@color/dark_grey"
         app:cardCornerRadius="8dp"
         app:strokeColor="@color/grey"
         >
@@ -68,7 +68,7 @@
         android:layout_height="match_parent"
         android:layout_marginStart="5dp"
         android:layout_weight="1"
-        app:cardBackgroundColor="@color/grey"
+        app:cardBackgroundColor="@color/dark_grey"
         app:cardCornerRadius="8dp"
         app:strokeColor="@color/grey"
         >

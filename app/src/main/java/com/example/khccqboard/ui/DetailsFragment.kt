@@ -226,6 +226,7 @@ class DetailsFragment : Fragment() {
 
 
             language = images.language
+     //       Toast.makeText(requireContext(), "Language is : $language", Toast.LENGTH_SHORT).show()
 
 
 //            Glide.with(requireContext())
